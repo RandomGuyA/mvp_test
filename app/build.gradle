@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "23.0.0 rc2"
+
+    defaultConfig {
+        applicationId "interactive.atebol.mvptest"
+        minSdkVersion 15
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile files('libs/butterknife-7.0.1.jar')
+    compile files('libs/dagger-2.0.2.jar')
+    provided 'org.glassfish:javax.annotation:10.0-b28'
+    compile files('libs/javax.inject-1.jar')
+    compile files('libs/javapoet-1.6.1.jar')
+}
